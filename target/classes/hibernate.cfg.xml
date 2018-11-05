@@ -8,7 +8,7 @@
   <session-factory>
       <!-- Database connection settings -->
       <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
-      <property name="connection.url">jdbc:mysql://localhost/employee</property>
+      <property name="connection.url">jdbc:mysql://localhost/blog</property>
       <property name="connection.username">root</property>
       <property name="connection.password">cisco</property>
  
@@ -24,14 +24,15 @@
       <!-- Disable the second-level cache -->
       <property name="cache.provider_class">org.hibernate.cache.internal.NoCacheProvider</property>
  
- 	  <property name="hibernate.hbm2ddl.auto">create</property>
+ 	  <property name="hibernate.hbm2ddl.auto">create-drop</property>
  
       <!-- Echo all executed SQL to stdout -->
       <property name="show_sql">true</property>
  
-      <mapping class="hibernate_test.nimportequoi.Employee" />
-      <mapping class="hibernate_test.nimportequoi.Department" />
-      <mapping class="hibernate_test.nimportequoi.Project" />
+      <mapping class="main.java.domain.User" />
+      <mapping class="main.java.domain.Tag" />
+      <mapping class="main.java.domain.Post" />
+      <mapping class="main.java.domain.Comment" />
       
       
   </session-factory>

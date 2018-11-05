@@ -1,4 +1,4 @@
-package hibernate_test.nimportequoi;
+package main.java.domain;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -8,8 +8,8 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "Project")
-public class Project {
+@Table(name = "User")
+public class User {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,17 +19,37 @@ public class Project {
 	@Column(name = "name")
 	private String name;
 	
+	@Column(name = "email")
+	private String email;
+	
+	public User(String name, String email) {
+		super();
+		this.name = name;
+		this.email = email;
+	}
+	
+	public User() {}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
 	public int getId() {
 		return id;
 	}
 	
-	public String getName() {
-		return name;
-	}
-	
-	public void setName(String name) {
-		this.name = name;
-	}
 	
 	
 	
